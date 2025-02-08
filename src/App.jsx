@@ -17,13 +17,10 @@ const App = () => {
   return (
     <BrowserRouter>
       <Header />
-
       <Routes>
         <Route path="/" element={<Map />} />
-
         <Route path="/list" element={<List />} />
       </Routes>
-
       <Modal />
     </BrowserRouter>
   );

@@ -10,23 +10,11 @@ import { useState } from "react";
 const List = () => {
   const dispatch = useDispatch();
   const { isLoading, error, flights } = useSelector((store) => store.flight);
-
-  // kaçıncı elemandan itibaren kesilecek
   const [start, setStart] = useState(0);
-
-  // sayfa basşına eleman sayısı
   const perPage = 12;
-
-  // kaçıncı elemana kadar kesicez
   const end = start + perPage;
-
-  // slice methodu ile başlagıç ve bitiş arasını kes
   const currFlights = flights.slice(start, end);
-
-  // toplam sayfa sayısı
   const total = Math.ceil(flights.length / perPage);
-
-  // yeni sayfaya yıklanınca
   const handlePage = (event) => {
     setStart(event.selected * 10);
   };

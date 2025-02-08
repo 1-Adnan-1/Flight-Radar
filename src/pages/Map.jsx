@@ -18,10 +18,7 @@ const Map = () => {
   const { route } = useSelector((store) => store.detail);
 
   useEffect(() => {
-    // her 5 saniyede bir api'dan güncel verileri al
     const id = setInterval(() => dispatch(getFlights()), 10000);
-
-    // componentWillUnmount anında interval'ı durdur
     return () => clearInterval(id);
   }, []);
 

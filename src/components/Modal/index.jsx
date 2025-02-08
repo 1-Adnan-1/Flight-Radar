@@ -6,7 +6,7 @@ import Loader from "../Loader";
 import Gallery from "./Gallery";
 import Airport from "./Airport";
 import Time from "./Time";
-// import Aircraft from "./Aircraft";
+import Aircraft from "./Aircraft";
 import Error from "../Error";
 
 const Modal = () => {
@@ -16,10 +16,8 @@ const Modal = () => {
   );
 
   useEffect(() => {
-    // eğer id yoksa fonksiyonu durdur
     if (!detailId) return;
 
-    // id'si bilenen uçuşun detaylarını al
     dispatch(getDetails(detailId));
   }, [detailId]);
 
